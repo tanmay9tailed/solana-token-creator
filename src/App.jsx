@@ -169,16 +169,84 @@ export default function App() {
           <h2 className="bg-purple-900/50 text-purple-400 font-bold inline-block px-4 py-2 rounded-lg">
             Support My Work
           </h2>
-          <h1 className="text-4xl font-bold leading-snug text-center">
-            Buy me a coffee if you like what I do.
+          <h1 className="text-4xl font-bold leading-snug text-center mt-4">
+            Enjoying the content? <br />
+            <span className="text-purple-400">Buy me a coffee!</span>
           </h1>
-          <div className="mt-8">
-            <a
-              href="https://www.buymeacoffee.com/username"
-              className="bg-purple-600 py-2 px-6 rounded-full hover:bg-purple-700"
-            >
-              Buy me a Coffee
-            </a>
+          <p className="text-lg text-gray-400 text-center mt-2">
+            Your support helps me create more amazing content and projects. Thank you!
+          </p>
+
+          <div className="mt-6">
+              <button className="bg-gray-800 py-3 px-6 rounded-full hover:bg-gray-700 transition duration-300 flex justify-center items-center" onClick={() => navigate("/send-transaction")}>
+                Buy Me a Coffee
+                <img
+                  src="https://play-lh.googleusercontent.com/aMb_Qiolzkq8OxtQZ3Af2j8Zsp-ZZcNetR9O4xSjxH94gMA5c5gpRVbpg-3f_0L7vlo"
+                  alt="coffee"
+                  className="w-8 h-8 rounded-3xl ml-4"
+                />
+              </button>
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div id="faq" className="bg-gray-950 text-white py-16 px-8">
+          <h2 className="text-4xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+          <div className="space-y-6 max-w-3xl mx-auto">
+            <div className="bg-gray-800 p-6 rounded-lg">
+              <h3 className="text-xl font-semibold mb-2">What is Solana?</h3>
+              <p className="text-gray-400">
+                Solana is a highly performant blockchain supporting builders around the world creating decentralized
+                apps (dApps).
+              </p>
+            </div>
+            <div className="bg-gray-800 p-6 rounded-lg">
+              <h3 className="text-xl font-semibold mb-2">How do I create a Solana Token?</h3>
+              <p className="text-gray-400">
+                You can create Solana Tokens easily using our platform without needing to write code. Just follow the
+                steps provided in the "Create" section.
+              </p>
+            </div>
+            <div className="bg-gray-800 p-6 rounded-lg">
+              <h3 className="text-xl font-semibold mb-2">
+                What is the difference between Mainnet, Devnet, and Testnet?
+              </h3>
+              <p className="text-gray-400">
+                Mainnet is the live network, Devnet is for developers to test dApps, and Testnet is used for testing new
+                features before moving to the mainnet.
+              </p>
+            </div>
+          </div>
+
+          {/* Ask a Question Form */}
+          <div className="mt-16 max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-8">Ask Me Anything</h2>
+            <form className="bg-gray-800 p-6 rounded-lg">
+              <div className="mb-4">
+                <label htmlFor="name" className="block text-gray-400 mb-2">
+                  Name:
+                </label>
+                <input type="text" id="name" className="w-full bg-gray-900 p-3 rounded" />
+              </div>
+              <div className="mb-4">
+                <label htmlFor="email" className="block text-gray-400 mb-2">
+                  Email:
+                </label>
+                <input type="email" id="email" className="w-full bg-gray-900 p-3 rounded" />
+              </div>
+              <div className="mb-4">
+                <label htmlFor="question" className="block text-gray-400 mb-2">
+                  Your Question:
+                </label>
+                <textarea id="question" rows="4" className="w-full bg-gray-900 p-3 rounded"></textarea>
+              </div>
+              <button
+                type="submit"
+                className="bg-purple-600 py-2 px-6 rounded-full hover:bg-purple-700 transition duration-300"
+              >
+                Submit
+              </button>
+            </form>
           </div>
         </div>
       </div>
