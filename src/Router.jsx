@@ -8,6 +8,7 @@ import Faucet from "./pages/Faucet";
 import CreateToken from "./pages/CreateToken";
 import App from "./App";
 import BuyCoffee from "./pages/BuyCoffee";
+import TokenMetadata from "./pages/TokenMetadata";
 
 const Router = () => {
 
@@ -20,7 +21,9 @@ const Router = () => {
               <Route path="/" element={<App />} />
               <Route path="/airdrop" element={<Faucet />} />
               <Route path="/create-token" element={<CreateToken />} />
-              <Route path="/send-transaction" element={<BuyCoffee />} />
+              <Route path="/buy-me-a-coffee" element={<BuyCoffee coffee={"true"} />} />
+              <Route path="/send-transaction" element={<BuyCoffee coffee={"false"} />} />
+              <Route path="/token-metadata" element={<TokenMetadata/>} />
             </Routes>
           </BrowserRouter>
         </WalletModalProvider>

@@ -2,6 +2,7 @@ import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 import { useNavigate } from "react-router";
 
 export default function App() {
+  alert("Currently this is in devnet only");
   const scrollToSection = (id) => {
     document.getElementById(id).scrollIntoView({ behavior: "smooth" });
   };
@@ -81,11 +82,46 @@ export default function App() {
                 alt="butterfly"
                 className="rounded-lg"
               />
+              <img
+                src="https://images.unsplash.com/photo-1676911809746-85d90edbbe4a?q=80&w=2549&auto=format&fit=crop"
+                alt="butterfly"
+                className="rounded-lg"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1676911809746-85d90edbbe4a?q=80&w=2549&auto=format&fit=crop"
+                alt="butterfly"
+                className="rounded-lg"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1676911809746-85d90edbbe4a?q=80&w=2549&auto=format&fit=crop"
+                alt="butterfly"
+                className="rounded-lg"
+              />
               {/* More images as needed */}
             </div>
 
             {/* Right Column with Scrolling Animation */}
             <div className="space-y-3 animate-scrollright">
+              <img
+                src="https://images.unsplash.com/photo-1676911809746-85d90edbbe4a?q=80&w=2549&auto=format&fit=crop"
+                alt="butterfly"
+                className="rounded-lg"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1676911809746-85d90edbbe4a?q=80&w=2549&auto=format&fit=crop"
+                alt="butterfly"
+                className="rounded-lg"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1676911809746-85d90edbbe4a?q=80&w=2549&auto=format&fit=crop"
+                alt="butterfly"
+                className="rounded-lg"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1676911809746-85d90edbbe4a?q=80&w=2549&auto=format&fit=crop"
+                alt="butterfly"
+                className="rounded-lg"
+              />
               <img
                 src="https://images.unsplash.com/photo-1676911809746-85d90edbbe4a?q=80&w=2549&auto=format&fit=crop"
                 alt="butterfly"
@@ -178,14 +214,17 @@ export default function App() {
           </p>
 
           <div className="mt-6">
-              <button className="bg-gray-800 py-3 px-6 rounded-full hover:bg-gray-700 transition duration-300 flex justify-center items-center" onClick={() => navigate("/send-transaction")}>
-                Buy Me a Coffee
-                <img
-                  src="https://play-lh.googleusercontent.com/aMb_Qiolzkq8OxtQZ3Af2j8Zsp-ZZcNetR9O4xSjxH94gMA5c5gpRVbpg-3f_0L7vlo"
-                  alt="coffee"
-                  className="w-8 h-8 rounded-3xl ml-4"
-                />
-              </button>
+            <button
+              className="bg-gray-800 py-3 px-6 rounded-full hover:bg-gray-700 transition duration-300 flex justify-center items-center"
+              onClick={() => navigate("/buy-me-a-coffee")}
+            >
+              Buy Me a Coffee
+              <img
+                src="https://play-lh.googleusercontent.com/aMb_Qiolzkq8OxtQZ3Af2j8Zsp-ZZcNetR9O4xSjxH94gMA5c5gpRVbpg-3f_0L7vlo"
+                alt="coffee"
+                className="w-8 h-8 rounded-3xl ml-4"
+              />
+            </button>
           </div>
         </div>
 
@@ -260,10 +299,7 @@ function ToolCard({ title, path, description }) {
     <div className="bg-gray-900 p-6 rounded-lg hover:bg-gray-800 transition duration-300 ease-in-out">
       <h3 className="text-2xl font-bold mb-4">{title}</h3>
       <p className="text-gray-400 mb-6">{description}</p>
-      <button
-        className="bg-purple-600 py-2 px-4 rounded-full hover:bg-purple-700"
-        onClick={() => navigate(`/${path}`)}
-      >
+      <button className="bg-purple-600 py-2 px-4 rounded-full hover:bg-purple-700" onClick={() => navigate(`/${path}`)}>
         Use this -&gt;
       </button>
     </div>
