@@ -2,7 +2,6 @@ import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 import { useNavigate } from "react-router";
 
 export default function App() {
-  alert("Currently this is in devnet only");
   const scrollToSection = (id) => {
     document.getElementById(id).scrollIntoView({ behavior: "smooth" });
   };
@@ -38,8 +37,9 @@ export default function App() {
               className="bg-purple-600 text-white py-2 px-4 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500"
               name="network"
               id="network"
+              value="devnet"
             >
-              <option value="mainnet">Mainnet</option>
+              <option value="mainnet-beta">Mainnet</option>
               <option value="devnet">Devnet</option>
               <option value="testnet">TestNet</option>
             </select>
