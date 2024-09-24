@@ -1,51 +1,14 @@
 import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 import { useNavigate } from "react-router";
+import coffee from "../public/coffee.png"
 
 export default function App() {
-  const scrollToSection = (id) => {
-    document.getElementById(id).scrollIntoView({ behavior: "smooth" });
-  };
-
   const navigate = useNavigate();
-
-  const navigateTo = (path) => {
-    navigate(`/${path}`);
-  };
-
   return (
     <>
       <div className="h-screen bg-gray-950 text-white">
         {/* Navbar */}
-        <nav className="flex justify-between items-center p-6 fixed top-0 w-full bg-slate-900 z-50">
-          <div className="text-3xl font-bold">SOLANA</div>
-          <div className="flex items-center space-x-6 font-bold">
-            <button onClick={() => scrollToSection("home")} className="hover:text-purple-400">
-              Home
-            </button>
-            <button onClick={() => scrollToSection("tools")} className="hover:text-purple-400">
-              Tools
-            </button>
-            <button onClick={() => scrollToSection("buy-me-a-coffee")} className="hover:text-purple-400">
-              Buy me a Coffee
-            </button>
-            <button onClick={() => scrollToSection("faq")} className="hover:text-purple-400">
-              FAQ
-            </button>
-          </div>
-          <div className="flex items-center space-x-6">
-            <select
-              className="bg-purple-600 text-white py-2 px-4 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500"
-              name="network"
-              id="network"
-              value="devnet"
-            >
-              <option value="mainnet-beta">Mainnet</option>
-              <option value="devnet">Devnet</option>
-              <option value="testnet">TestNet</option>
-            </select>
-            <WalletMultiButton />
-          </div>
-        </nav>
+        
 
         {/* Hero Section */}
         <div id="home" className="grid grid-cols-2 gap-8 px-16 mt-12 h-full">
@@ -188,6 +151,11 @@ export default function App() {
               path="send-transaction"
               description="Send transactions securely and quickly."
             />
+            <ToolCard
+              title="Get your Associated Token Account(ATA) address"
+              path="ata-address"
+              description="Find your ATA address with only few steps."
+            />
           </div>
 
           <div className="text-center mt-8">
@@ -220,7 +188,7 @@ export default function App() {
             >
               Buy Me a Coffee
               <img
-                src="https://play-lh.googleusercontent.com/aMb_Qiolzkq8OxtQZ3Af2j8Zsp-ZZcNetR9O4xSjxH94gMA5c5gpRVbpg-3f_0L7vlo"
+                src={coffee}
                 alt="coffee"
                 className="w-8 h-8 rounded-3xl ml-4"
               />
@@ -296,7 +264,7 @@ export default function App() {
 function ToolCard({ title, path, description }) {
   const navigate = useNavigate();
   return (
-    <div className="bg-gray-900 p-6 rounded-lg hover:bg-gray-800 transition duration-300 ease-in-out">
+    <div className="bg-gray-900 p-6 rounded-lg hover:bg-gray-800 transition duration-300 ease-in-out hover:-translate-y-2">
       <h3 className="text-2xl font-bold mb-4">{title}</h3>
       <p className="text-gray-400 mb-6">{description}</p>
       <button className="bg-purple-600 py-2 px-4 rounded-full hover:bg-purple-700" onClick={() => navigate(`/${path}`)}>

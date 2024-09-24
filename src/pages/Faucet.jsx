@@ -27,7 +27,11 @@ const Faucet = () => {
   }, [publicKey, connection, sol]);
 
   const getSol = async () => {
-    console.log("started");
+    const endpoint = localStorage.getItem("endpoint");
+    if (endpoint.trim() === "https://solana-mainnet.g.alchemy.com/v2/djt3Hz2vuRd_sihRFtfXzdXWZjbciIJg") {
+      alert("You can't AirDrop yourself on the MAINNET.");
+      return;
+    }
     if(!publicKey){
       alert("Connect your wallet first.")
       return;
@@ -45,7 +49,6 @@ const Faucet = () => {
       }
     }
     setLoading(false);
-    console.log("ended");
   };
 
   return (
