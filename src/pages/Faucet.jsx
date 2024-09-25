@@ -27,7 +27,7 @@ const Faucet = () => {
   }, [publicKey, connection, sol]);
 
   const getSol = async () => {
-    const endpoint = localStorage.getItem("endpoint");
+    const endpoint = localStorage.getItem("endpoint") || "https://solana-devnet.g.alchemy.com/v2/djt3Hz2vuRd_sihRFtfXzdXWZjbciIJg";
     if (endpoint.trim() === "https://solana-mainnet.g.alchemy.com/v2/djt3Hz2vuRd_sihRFtfXzdXWZjbciIJg") {
       alert("You can't AirDrop yourself on the MAINNET.");
       return;
